@@ -1,5 +1,5 @@
 def add(a,b):
- it   print("sum ",a+b)
+    print("sum ",a+b)
 
 def sub():
     print("hah")
