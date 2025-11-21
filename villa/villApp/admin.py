@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Customer
 
-# Register your models here.
+class customAdmin(admin.ModelAdmin):list_display=['cname','cadd','email','phone','unm','pw']
+
+admin.site.register(Customer, customAdmin)

@@ -22,4 +22,10 @@ from villApp import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index,name='index'),
+    path('regis/', views.regis, name='regis'),
+    path("login/", views.login,name='login'),
+    path("userdtl", views.userdtl,name='userdtl'),
+    path("contact/", views.contact,name='contact'),
+    path("why/", views.why,name='why'),
+    path("testimonial/", views.testimonial,name='testimonial'),
 ]
