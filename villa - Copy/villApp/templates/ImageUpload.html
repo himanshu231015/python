@@ -1,0 +1,32 @@
+<!DOCTYPE
+{% load static %}>
+<html lang="en">
+<body>
+    <div class="container mt-3">
+        <div class="py-5" text-center bg-secondary text-white>
+            <h1 class="mb-3">Upload Your Image</h1>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+            <input type="file" name="image" id="imageFile">
+            <input type="submit" value="Upload Image" class="btn btn-primary">
+            </form>
+        </div>
+        <div class="row">
+            {% for i in img %}
+            <div class="col-md-4">
+                <div class="card m-2">
+                    <img src="{{ i.photo.url }}" class="card-img-top" alt="Image" height="320px">
+                    <div class="card body">
+                        <small class="card-text text-muted">Upload:{{i.date}}</small>
+                         
+                        <form action="{% url 'delete_image' i.id %}" method="POST">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm mt-2">Delete</button>
+                        </form>
+                    </div>
+                </div>   
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>

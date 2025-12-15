@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+{% include 'header.html' %}
+
+<!-- add product section -->
+<section class="contact_section layout_padding">
+    <div class="container">
+        <div class="heading_container heading_center">
+            <h2>
+                Add New Product
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="form_container">
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="{{ form.name.id_for_label }}">Product Name</label>
+                            {{ form.name }}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.price.id_for_label }}">Price</label>
+                            {{ form.price }}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.description.id_for_label }}">Description</label>
+                            {{ form.description }}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.image.id_for_label }}">Product Image</label>
+                            {{ form.image }}
+                        </div>
+                        <div class="btn-box">
+                            <button type="submit">
+                                Add Product
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end add product section -->
+
+{% include 'footer.html' %}
+</body>
+
+</html>
